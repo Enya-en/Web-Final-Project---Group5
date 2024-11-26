@@ -2266,6 +2266,9 @@ app.get('/api/example', (req, res) => {
   res.json({ message: '成功啟用 CORS！' });
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
 
 // 根路由回傳 index.html
 app.get('/', (req, res) => {
