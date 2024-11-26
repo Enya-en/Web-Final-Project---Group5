@@ -11,7 +11,4 @@ module.exports = merge(common, {
     static: ['./'],
   
   },
-  stats: {
-  children: true,
-},
 });
