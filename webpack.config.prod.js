@@ -17,7 +17,4 @@ module.exports = merge(common, {
       ],
     }),
   ],
-  stats: {
-  children: true,
-},
 });
