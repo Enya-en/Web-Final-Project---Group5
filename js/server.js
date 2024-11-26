@@ -5,6 +5,7 @@ app.use(cors());
 const port = 8080;
 // 提供靜態資源
 app.use(express.static('public'));
+const path = require('path');
 
 const universitiesData = [
   {
@@ -2266,8 +2267,9 @@ app.get('/api/example', (req, res) => {
 });
 
 
+// 根路由回傳 index.html
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/api/universities/:universityId/places/:placeId/status', (req, res) => {
