@@ -6,6 +6,11 @@ const port = 8080;
 // 提供靜態資源
 app.use(express.static('public'));
 
+fetch('https://web-final-project-groupe5.onrender.com/api/your-endpoint')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+
 const universitiesData = [
   {
     universityId: 1,
