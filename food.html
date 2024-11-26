@@ -2298,6 +2298,19 @@
     });
   });
 </script>
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const universityId = document.getElementById('university').dataset.id;
+            const placeId = document.getElementById('place').dataset.id;
+            
+            fetch(`/api/universities/${universityId}/places/${placeId}/status`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data); // 顯示餐廳名稱和營業狀態
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
 
 
 </body>
