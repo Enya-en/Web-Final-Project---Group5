@@ -6,9 +6,17 @@ const port = 8080;
 // 提供靜態資源
 app.use(express.static('public'));
 
-fetch('https://web-final-project-groupe5.onrender.com/api/your-endpoint')
+// 讀取HTML元素中的值
+const universityId = document.getElementById('university').dataset.id;
+const placeId = document.getElementById('place').dataset.id;
+
+// 使用這些值來構建API請求
+fetch(`https://web-final-project-groupe5.onrender.com/api/universities/${universityId}/places/${placeId}/status`)
   .then(response => response.json())
-  .then(data => console.log(data));
+  .then(data => {
+    console.log(data); // 顯示餐廳名稱和營業狀態
+  })
+  .catch(error => console.error('Error:', error));
 
 
 const universitiesData = [
