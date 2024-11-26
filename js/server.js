@@ -3,6 +3,8 @@ const app = express();
 const cors = require('cors')
 app.use(cors());
 const port = 8080;
+// 提供靜態資源
+app.use(express.static('public'));
 
 const universitiesData = [
   {
