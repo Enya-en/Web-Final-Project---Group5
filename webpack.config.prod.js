@@ -9,6 +9,10 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       template: './index.html',
     }),
+    new HtmlWebpackPlugin({
+  template: './food.html',  // 自動處理 food.html
+  filename: 'food.html',    // 指定輸出檔名
+}),
     new CopyPlugin({
       patterns: [
         { from: 'img', to: 'img' },
