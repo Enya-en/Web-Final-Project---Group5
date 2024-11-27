@@ -2272,7 +2272,7 @@ app.get('/', (req, res) => {
 
 // 根路由回傳 index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'js', 'food.html'));
 });
 
 app.get('/api/universities/:universityId/places/:placeId/status', (req, res) => {
