@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
+const {join} = require("node:path");
 app.use(cors());
 const port = 8080;
 // 提供靜態資源
 app.use(express.static('public'));
 const path = require('path');
+
 
 const universitiesData = [
   {
@@ -2270,10 +2272,6 @@ app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
 
-// 根路由回傳 index.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'js', 'food.html'));
-});
 
 app.get('/api/universities/:universityId/places/:placeId/status', (req, res) => {
   const universityId = parseInt(req.params.universityId);
